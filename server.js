@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 // app.get('/api/checkUserToken', user.checkUserLogin);
 // Раскоментить при продуктовой сборке
 app.use(express.static(__dirname + '/dist/shop'));
-app.get('/*', function (req, res) {
+app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/shop/index.html'));
 });
 const port = process.env.PORT || 5000;
