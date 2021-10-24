@@ -35,10 +35,10 @@ app.post('/api/loginUser', user.userLogin);
 app.post('/api/createUser', user.createUser);
 app.get('/api/checkUserToken', user.checkUserLogin);
 // Раскоментить при продуктовой сборке
-// app.use(express.static(__dirname + '/dist/iron-market'));
-// app.get('/*', function(req, res) {
-//     res.sendFile(path.join(__dirname + '/dist/iron-market/index.html'));
-// });
+app.use(express.static(__dirname + '/dist/shop'));
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/dist/shop/index.html'));
+});
 
 app.listen(config.configServer.portServer, () =>
     console.log('Server started on port 5000'));
