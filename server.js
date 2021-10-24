@@ -36,11 +36,11 @@ app.post('/api/createUser', user.createUser);
 app.get('/api/checkUserToken', user.checkUserLogin);
 // Раскоментить при продуктовой сборке
 app.use(express.static(__dirname + '/dist/shop'));
-app.get('/*', function(req, res) {
+app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname + '/dist/shop/index.html'));
 });
-
-app.listen(config.configServer.portServer, () =>
+const port = process.env.PORT || 5000;
+app.listen(port, () =>
     console.log('Server started on port 5000'));
 module.exports = app;
 
