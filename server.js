@@ -45,9 +45,9 @@
 //     console.log('Server started on port 5000'));
 // //module.exports = app;
 
-const express = require("express");
+const express = require('express');
 const app = express();
-app.use(express.logger());
+//app.use(express.logger());
 
 app.get('/', function(request, response) {
     response.send('Hello World!');
