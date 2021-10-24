@@ -37,7 +37,7 @@ const app = express();
 // Раскоментить при продуктовой сборке
 //app.use(express.static(__dirname + '/public/shop'));
 app.get('*', function (req, res) {
-    res.send('Home page');
+    //res.send('Home page');
     res.sendFile(path.join(__dirname + '/public/shop/index.html'));
 });
 const port = process.env.PORT || 5000;
