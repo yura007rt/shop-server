@@ -1,1 +1,1 @@
-web: bin/start-nginx-solo && npm run start
+web: config -C nginx.conf
