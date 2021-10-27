@@ -10,7 +10,7 @@ events {
 
 http {
 	gzip on;
-	gzip_comp_level 5;
+	gzip_comp_level 2;
 	gzip_min_length 512;
 	gzip_proxied any; # Heroku router sends Via header
 
@@ -47,9 +47,5 @@ http {
 			proxy_redirect off;
 			proxy_pass http://app_server;
 		}
-		error_page   500 502 503 504 404 /error.html;
-        location = /error.html {
-            root   public;
-        }
 	}
 }
